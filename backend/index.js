@@ -18,7 +18,7 @@ app.use(cors())
 //     allowedHeaders:["Content-Type"]
 // }))
 
-dotenv.config({path:"./config.env"});
+dotenv.config();
 
 const port = process.env.PORT;
 
