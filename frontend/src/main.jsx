@@ -8,7 +8,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
   <SnackbarProvider>
     <App />
-
   </SnackbarProvider>
   </BrowserRouter>,
 )
