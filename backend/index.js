@@ -7,7 +7,7 @@ const swaggerUi = require('swagger-ui-express');
 
 const swaggerDocument= require('./swagger-output.json');
 const app=express();
-const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2/swagger-ui.js"
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2/swagger-ui.css"
 app.use(express.json())
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
