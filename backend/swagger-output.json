@@ -5,6 +5,11 @@
     "title": "Bookstore",
     "description": "Bookstore api created by atul"
   },
+  "servers": [
+    {
+      "url": "https://book-store-y7uv.vercel.app/books/"
+    }
+  ],
   "paths": {
     "/": {
       "post": {
