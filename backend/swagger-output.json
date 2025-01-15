@@ -7,9 +7,6 @@
   },
   "servers": [
     {
-      "url": "http://book-store-y7uv.vercel.app/books/"
-    },
-    {
       "url": "https://book-store-y7uv.vercel.app/books/"
     }
   ],
