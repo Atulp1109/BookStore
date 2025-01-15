@@ -6,12 +6,13 @@ const bookRouter =require ('./routes/BookRoutes.js');
 const swaggerUi = require('swagger-ui-express');
 
 const swaggerDocument= require('./swagger-output.json');
-const pathToSwaggerUi = require('swagger-ui-dist').absolutePath()
 const app=express();
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.18.2/swagger-ui.css"
 app.use(express.json())
-app.use(express.static(pathToSwaggerUi))
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, {
+    customCssUrl: CSS_URL,
+}));
 
 
 // allow all origin (*)
