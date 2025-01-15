@@ -1,12 +1,16 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import cors from 'cors'
-import bookRouter from './routes/BookRoutes.js';
+const express = require('express');
+const dotenv =require('dotenv');
+const mongoose = require('mongoose');
+const cors = require('cors')
+const bookRouter =require ('./routes/BookRoutes.js');
+const swaggerUi = require('swagger-ui-express');
 
-
+const swaggerDocument= require('./swagger-output.json');
 const app=express();
 app.use(express.json())
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // allow all origin (*)
 app.use(cors())
@@ -27,11 +31,10 @@ app.get("/",(request,resonse)=>{
 });
 
 
-app.use('/books',bookRouter)
-
+app.use('/books',require ('./routes/BookRoutes.js'))
 
 app.listen(port,()=>{
-    console.log(`listening on ${port}`);
+    console.log(`Api docs - http://localhost:4000/api-docs`);
 })
 
 mongoose
